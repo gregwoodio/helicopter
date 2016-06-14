@@ -95,7 +95,11 @@ $(document).ready(function() {
 			upper = walls[24][1] + Math.random() * variance * 2 - variance;
 			upper = (upper < 1) ? 5 : upper; //if less than the top set to 5
 			lower = 500 - p - upper;
-			lower = (lower < 1) ? 5 : lower; //if lower than bottom set to 5
+			//if lower than bottom set to 5
+			if (lower < 1) {
+				lower = 5;
+				upper = 495 - p;
+			}; 
 			walls.push([p, upper, lower]);
 		}
 		
