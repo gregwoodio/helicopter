@@ -228,6 +228,16 @@ $(document).ready(function() {
 		fall();
 	});
 
+	$(document).mousedown(function(event) {
+		if (game) {
+			rise();
+		}
+	});
+
+	$(document).mouseup(function(event) {
+		fall();
+	});
+
 	showScores();
 	setWallStart();
 });
