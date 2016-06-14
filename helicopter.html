@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<title>Helicopter Game</title>
+<!-- 
+Made by Greg Wood, February 5, 2014
+Updated October 10, 2015
+-->
+<style>
+
+canvas {
+	border: 1px solid black;
+}
+
+img {
+	display: none;
+}
+
+.instructions {
+	text-align: center;
+}
+
+#hiscores {
+	width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+#hiscorestable {
+	width: 400px;
+	display: inline-block;
+	vertical-align: top;
+}
+</style>
+
+<script src="//code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+</head>
+
+<body>
+
+<div id="hiscores">
+<canvas id="canvas" height="500" width="750" onmousedown="if (game) {rise();}" onmouseup="fall()"></canvas>
+<div id="hiscorestable"></div>.
+</div>
+<img id="helicopterRise" src="helicopterRise.png"/>
+<img id="helicopterFall" src="helicopterFall.png" />
+<img id="boom" src="boom.png" />
+<div class="instructions">
+<p>Push any key to make the helicopter rise. Don't hit the walls!</p>
+<p>Push R to reload if you die, and S to submit your score.</p>
+</div>
+<script type="text/javascript" src="helicopter.js"></script>
+
+</body>
+</html>
