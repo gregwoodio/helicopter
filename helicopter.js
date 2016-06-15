@@ -191,7 +191,15 @@ $(document).ready(function() {
 			dataType: "html",
 			success: function(players) {
 				for (i = 0; i < players.length; i++) {
-					$("#table").append("<tr><td>" + atob(players[i]["PlayerName"]) + "</td><td>" + players[i]["Score"] + "</td></tr>");
+					string = "<tr><td>";
+					try {
+						string += atob(players[i]["PlayerName"]);
+					} catch (err) {
+
+					} 
+					string += "</td><td>" + players[i]["Score"] + "</td></tr>";
+
+					$("#table").append(string);
 				}
 			}
 		});
