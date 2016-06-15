@@ -189,9 +189,9 @@ $(document).ready(function() {
 			url: "getscore.php",
 			type: "POST",
 			dataType: "html",
-			success: function(data) {
-				$(data).forEach(function(player) {
-					$("#table").append("<tr><td>" + atob(player["PlayerName"]) + "</td><td>" + player["Score"] + "</td></tr>");
+			success: function(players) {
+				players.forEach(function(player) {
+  					$("#table").append("<tr><td>" + atob(player["PlayerName"]) + "</td><td>" + player["Score"] + "</td></tr>");
 				});
 			}
 		});
