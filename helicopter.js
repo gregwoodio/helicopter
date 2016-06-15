@@ -190,14 +190,16 @@ $(document).ready(function() {
 			type: "POST",
 			dataType: "html",
 			success: function(data) {
-				$("#hiscorestable").html(data);
+				data.forEach(function(player) {
+					$("#table").append("<tr><td>" + atob(player["PlayerName"]) + "</td><td>" + player["Score"] + "</td></tr>");
+				});
 			}
 		});
 	}
 
 	function submitScore() {
 		var username = prompt("Enter your name:");
-		//username = username.replace(/[^a-zA-Z0-9 ]/g, "");
+		username = btoa(username);
 
 		$.ajax({
 			url: "logscore.php",
