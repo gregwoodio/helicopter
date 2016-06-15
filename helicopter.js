@@ -189,25 +189,15 @@ $(document).ready(function() {
 			url: "getscore.php",
 			type: "POST",
 			dataType: "html",
-			success: function(players) {
-				for (i = 0; i < players.length; i++) {
-					string = "<tr><td>";
-					try {
-						string += atob(players[i]["PlayerName"]);
-						string += "</td><td>" + players[i]["Score"] + "</td></tr>";
-					} catch (err) {
-						string += "</td><td></td></tr>";
-					}
-
-					$("#table").append(string);
-				}
+			success: function(data) {
+				$("#hiscorestable").html(data);
 			}
 		});
 	}
 
 	function submitScore() {
 		var username = prompt("Enter your name:");
-		username = btoa(username);
+		username = username.replace(/[^a-zA-Z0-9 ]/g, "");
 
 		$.ajax({
 			url: "logscore.php",
