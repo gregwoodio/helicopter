@@ -190,7 +190,7 @@ $(document).ready(function() {
 			type: "POST",
 			dataType: "html",
 			success: function(data) {
-				data.forEach(function(player) {
+				$(data).forEach(function(player) {
 					$("#table").append("<tr><td>" + atob(player["PlayerName"]) + "</td><td>" + player["Score"] + "</td></tr>");
 				});
 			}
