@@ -194,10 +194,10 @@ $(document).ready(function() {
 					string = "<tr><td>";
 					try {
 						string += atob(players[i]["PlayerName"]);
+						string += "</td><td>" + players[i]["Score"] + "</td></tr>";
 					} catch (err) {
-
-					} 
-					string += "</td><td>" + players[i]["Score"] + "</td></tr>";
+						string += "</td><td></td></tr>";
+					}
 
 					$("#table").append(string);
 				}
